@@ -4,97 +4,71 @@
 <head>
   <meta charset="UTF-8">
   <title>أول صفحة لي</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
   <style>
     body {
       background-color: #f0f8ff;
-      text-align: center;
-      padding-top: 100px;
-      font-family: sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      animation: fadeIn 2s ease forwards;
+    }
+    .fade-in {
       opacity: 0;
       animation: fadeIn 2s ease forwards;
     }
-
-    h1 {
-      color: #2c3e50;
+    @keyframes fadeIn {
+      to { opacity: 1; }
     }
-
-    p {
-      color: #34495e;
-    }
-
     img {
-      margin: 20px;
       border-radius: 10px;
       width: 200px;
       height: auto;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       transition: transform 0.3s ease;
     }
-
     img:hover {
       transform: scale(1.05);
     }
-
-    button {
-      background-color: #3498db;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s;
-    }
-
-    button:hover {
-      background-color: #2980b9;
-      transform: scale(1.05);
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
   </style>
 </head>
-<body>
+<body class="text-center p-5 fade-in">
 
-  <h1>مرحبًا! أنا عبد التواب</h1>
-  <p>أتعلم تطوير الويب بكل حماس.</p>
+  <h1 class="text-primary mb-4">مرحبًا!</h1>
 
-  <img src="https://i.postimg.cc/C5GWNMG0/IMG-20250417-221623-904.jpg" alt="عبد التواب">
+  <div class="container">
+    <p class="lead text-secondary">
+      أنا المهندس عبد التواب، عندي خبرة أكثر من سبعة عشر سنة في المبيعات، الدعم الفني، والبرمجة.
+      اشتغلت في شركات كبرى مثل شركة جيديا للتقنية المالية وشركة العمودي القابضة، وأدير مشروعي الخاص في العطور.
+      هذه التجربة خلتني أفهم السوق، أتعامل مع الناس باحتراف، وأجمع بين الجانب التجاري والتقني.
+      والآن أبحث عن شراكة أو فرصة أقدم فيها قيمة حقيقية، سواء بخبرتي في إغلاق الصفقات أو الحلول التقنية الميدانية.
+    </p>
 
-  <br>
+    <img src="https://i.postimg.cc/C5GWNMG0/IMG-20250417-221623-904.jpg" alt="عبد التواب" class="my-4">
 
-  <button onclick="alert('شكرًا لزيارتك!')">اضغط هنا</button>
-  
-<br>
-<button onclick="window.location.href='about.html'">من أنا</button>
-<audio autoplay loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg">
-  متصفحك لا يدعم تشغيل الصوت.
-</audio>
+    <div class="d-grid gap-3 col-6 mx-auto">
+      <button class="btn btn-primary" onclick="alert('شكرًا لزيارتك!')">اضغط هنا</button>
+      <button class="btn btn-outline-primary" onclick="window.location.href='about.html'">من أنا</button>
+      <button class="btn btn-outline-secondary" onclick="toggleAudio()">تشغيل / إيقاف الصوت</button>
+    </div>
+  </div>
 
+  <audio id="bgAudio" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg">
+    متصفحك لا يدعم تشغيل الصوت.
+  </audio>
 
-<br><br>
+  <script>
+    const audio = document.getElementById("bgAudio");
+    let isPlaying = false;
 
-<button onclick="toggleAudio()">تشغيل / إيقاف الصوت</button>
-
-<audio id="bgAudio" loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg">
-  متصفحك لا يدعم تشغيل الصوت.
-</audio>
-
-<script>
-  const audio = document.getElementById("bgAudio");
-  let isPlaying = false;
-
-  function toggleAudio() {
-    if (isPlaying) {
-      audio.pause();
-    } else {
-      audio.play();
+    function toggleAudio() {
+      if (isPlaying) {
+        audio.pause();
+      } else {
+        audio.play();
+      }
+      isPlaying = !isPlaying;
     }
-    isPlaying = !isPlaying;
-  }
-</script>
+  </script>
+
 </body>
 </html>

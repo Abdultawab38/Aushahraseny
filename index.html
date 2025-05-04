@@ -35,17 +35,17 @@
       transform: scale(1.05);
     }
     p, .lead {
-      font-size: 30px;
+      font-size: 20px;
       line-height: 2;
-      
-      
+      font-weight: 500;
+      text-align: justify;
     }
   </style>
 </head>
 <body class="text-center p-5 fade-in">
   <div style="max-width: 700px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
 
-    <h1 class="text-primary mb-4">مرحبًا!</h1>
+    <h1 class="text-primary mb-4" style="font-size: 36px; font-weight: bold;">مرحبًا!</h1>
     <div class="container">
       <p class="lead text-secondary">
         أنا المهندس عبد التواب، عندي خبرة أكثر من سبعة عشر سنة في المبيعات، الدعم الفني، والبرمجة.
@@ -53,14 +53,18 @@
         هذه التجربة خلتني أفهم السوق، أتعامل مع الناس باحتراف، وأجمع بين الجانب التجاري والتقني.
         والآن أبحث عن شراكة أو فرصة أقدم فيها قيمة حقيقية، سواء بخبرتي في إغلاق الصفقات أو الحلول التقنية الميدانية.
       </p>
-<img src="https://i.postimg.cc/3RYFMCg8/IMG-20250503-080353-844.jpg" alt="عبد التواب" class="my-4">
+      <img src="https://i.postimg.cc/3RYFMCg8/IMG-20250503-080353-844.jpg" alt="عبد التواب" class="my-4">
 
-      
-      
+      <p class="text-muted" style="font-size: 14px;">* لتفعيل صوت المطر، اضغط زر التشغيل أدناه</p>
       <div class="d-grid gap-3 col-6 mx-auto">
         <button class="btn btn-primary" onclick="alert('شكرًا لزيارتك!')">اضغط هنا</button>
         <button class="btn btn-outline-primary" onclick="window.location.href='about.html'">من أنا</button>
         <button class="btn btn-outline-secondary" onclick="toggleAudio()">تشغيل / إيقاف الصوت</button>
+        
+<a href="https://wa.me/966552567746" target="_blank" class="btn btn-success">
+  تواصل واتساب
+</a>
+        
       </div>
     </div>
 
@@ -70,21 +74,24 @@
   </div>
 
   <audio id="bgAudio" loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mpeg">
+    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Sounds_of_Nature/Sounds_of_Nature_-_06_-_Gentle_Rain_in_the_Forest.mp3" type="audio/mpeg">
     متصفحك لا يدعم تشغيل الصوت.
   </audio>
 
   <script>
     const audio = document.getElementById("bgAudio");
-    let isPlaying = false;
+
     function toggleAudio() {
-      if (isPlaying) {
-        audio.pause();
-      } else {
+      if (audio.paused) {
         audio.play();
+      } else {
+        audio.pause();
       }
-      isPlaying = !isPlaying;
     }
+
+    setTimeout(function() {
+      alert("مرحباً بك! هذه الصفحة من برمجة وتصميم عبد التواب الحاشدي. لتفعيل صوت المطر، اضغط زر التشغيل.");
+    }, 2000);
   </script>
 </body>
 </html>
